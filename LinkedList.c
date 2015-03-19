@@ -64,6 +64,31 @@ int removeHead(node_t ** head) {
 
     return retval;
 }
+int removeindex(node_t ** head, int n) {
+    int i = 0;
+    int retval = -1;
+    node_t * current = *head;
+    node_t * temp_node = NULL;
+
+    if (n == 0) {
+        return pop(head);
+    }
+
+    for (int i = 0; i < n-1; i++) {
+        if (current->next == NULL) {
+            return -1;
+        }
+        current = current->next;
+    }
+
+    temp_node = current->next;
+    retval = temp_node->val;
+    current->next = temp_node->next;
+    free(temp_node);
+
+    return retval;
+
+}
 int removeLast(node_t * head) {
     int retval = 0;
     /* if there is only one item in the list, remove it */
