@@ -1,21 +1,38 @@
 #include <stdio.h>
-#include <stlib.h>
+#include <stdlib.h>
+#include "header.h"
 
 int main()
 {
-	char *filename;
-	FILE *in,*out;
+	char *c;
+	int temp;
+	struct node *test;
+	head==NULL;
+	FILE *filename;
+
 	printf("Enter the name of the file\n");
 
-	scanf(filename);
+	scanf("%s\n,filename");
 
-	if(in!=null)
+	while(filename == NULL)
 	{
-		out=fopen(filename,w+)
+		scanf("%s\n,filename");
+
+
+		if(filename != NULL)
+		{
+			fopen(filename,"r");
+
+				
+				while(!feof(filename))
+				{
+
+					add(atoi(fgets(filename)));
+				}
+
+		}
 	}
-
-	fclose(fp);
+		fclose(filename);
+}	
 	
-
-}
 
