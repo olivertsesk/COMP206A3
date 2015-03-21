@@ -6,10 +6,10 @@ int main()
 {
 	struct node *test;
 	head==NULL;
-	add(9);
-	add(0);
-	add(272);
-	prettyPrint(test);
-	delete(0);
-	prettyPrint(test);
+	test.add(9);
+	test.add(0);
+	test.add(272);
+	test.prettyPrint(test);
+	test.delete(0);
+	test.prettyPrint(test);
 }
