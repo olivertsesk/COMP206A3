@@ -1,12 +1,12 @@
-testing : testing.o list.o
-	gcc -o testing testing.o list.o
+run : main.o list.o
+	gcc -o run main.o list.o
 
-testing.o : testing.c header.h
-	gcc -c testing.c
+main.o : main.c list.h
+	gcc -c main.c
 
-list.o : list.c
+list.o : list.c list.h
 	gcc -c list.c
 
 clean :
-	rm -f testing testing.o list.o
+	rm -f testing main.o list.o
 

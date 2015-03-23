@@ -1,36 +1,42 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "header.h"
+#include "list.h"
 
 int main()
 {
-	
+	int check=1
 	char filename[256];
 	char line[256];
 	int temp;
-	struct node *test;
-	head==NULL;
 	FILE *file;
 	int n;
-	printf("Enter the name of the file\n");
 
-	scanf("%s\n",&filename);
-	file=fopen(filename,"r");
+	 while (check){
+		printf("Enter the name of the file\n");
+		scanf("%s\n", filename);
 
-	if(file!=NULL)
-	{
-		file=fopen(filename,"r");
+		fp = fopen(filename, "r");
+		if (file != NULL){
+			check = 0;	
+		}
+		else{
+			printf("Enter the name of the file\n");	
+		}
+	}	
+	// if(file!=NULL)
+	// {
+	// 	file=fopen(filename,"r");
 		
-				while ( fgets ( line, sizeof line, file ) != NULL )
-				{
+	// 			while ( fgets ( line, sizeof line, file ) != NULL )
+	// 			{
 					
-					temp = atoi(line);
-					add(temp);
-				}
-	}
-	else
-	{
+	// 				temp = atoi(line);
+	// 				add(temp);
+	// 			}
+	// }
+	// else
+	// {
 		while(file==NULL)
 		{
 			printf("Enter the name of the file\n");
@@ -49,7 +55,7 @@ int main()
 		}
 		fclose(file);
 	
-	}
+	//}
 	
 	prettyPrint(test);
 	
@@ -61,7 +67,7 @@ int main()
 
 	scanf("%d,&n");
 	delete(n);
-		delete(75);
+	delete(75);
 	prettyPrint(test);
 	//printf("Please enter a number\n");
 	return 0;
