@@ -1,76 +1,77 @@
-#include <stdio.h>
+
 #include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
 #include "list.h"
 
-int main()
+void main()
 {
-	int check=1
-	char filename[256];
-	char line[256];
-	int temp;
-	FILE *file;
-	int n;
+	FILE *fileptr;	//pointer the the file
+	int bon, temp;	
+	int check = 1;	//acts as a boolean
+	char filename[256], input[20];	
+		
 
-	 while (check){
-		printf("Enter the name of the file\n");
-		scanf("%s\n", filename);
+	while (check)
+	{
+		printf("Enter a file name ");//taking the file name into filename
+		scanf("%s", filename);   	
+		fileptr = fopen(filename, "r");//giving permission to read only
 
-		fp = fopen(filename, "r");
-		if (file != NULL){
+		if (fileptr != NULL)
+		{
 			check = 0;	
 		}
-		else{
-			printf("Enter the name of the file\n");	
+		else
+		{
+			printf("File not found.\n");
 		}
 	}	
-	// if(file!=NULL)
-	// {
-	// 	file=fopen(filename,"r");
+
+	first = (struct node*) malloc (sizeof(struct node));	
+
+	if (fscanf(fileptr, "%d", &bon) > 0)//add the first number in the list
+	{	
+		first->head = bon;
+		first->tail = NULL;
+		point = first;	
+	}
+	while (fscanf(fileptr, "%d", &bon) == 1)
+	{
+		 add(bon);//adding the number in the list
+	}
+
+	prettyPrint();//printing the list before making changes
+	
+	check = 1;	
+
+	while(check)
+	{
+		if(first!=NULL)
+	{
+		printf("Enter a number to delete :");			
+		scanf("%d", &temp);
+		delete(temp);  //deleting entered number
+		printf("This is the new list\n");
+		prettyPrint();		//reprinting the list
+		printf("Would you like to delete another number? ");//asking to print another number
+		scanf("%s", input);	
 		
-	// 			while ( fgets ( line, sizeof line, file ) != NULL )
-	// 			{
-					
-	// 				temp = atoi(line);
-	// 				add(temp);
-	// 			}
-	// }
-	// else
-	// {
-		while(file==NULL)
+		if ((strcmp("y", input) == 0) || (strcmp("yes", input) == 0) || (strcmp("Yes", input) == 0))
 		{
-			printf("Enter the name of the file\n");
-			scanf("%s\n",&filename);
-			//printf("%s\n",&filename);
-
-			file=fopen(filename,"r");
-			
-					while ( fgets ( line, sizeof line, file ) != NULL )
-					{
-						
-						temp = atoi(line);
-						add(temp);
-					}
-					
+			 continue;
 		}
-		fclose(file);
-	
-	//}
-	
-	prettyPrint(test);
-	
-	// asking use a number
+		else
+		{
+			check = 0;
+		}
+	}
+	else
+	{
+		check =0;
+	}
+	}	
+}
 
-	//int n;
-	printf("Please enter a number");
-	//int n;
-
-	scanf("%d,&n");
-	delete(n);
-	delete(75);
-	prettyPrint(test);
-	//printf("Please enter a number\n");
-	return 0;
-}	
 	
 
