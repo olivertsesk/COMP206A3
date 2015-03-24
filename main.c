@@ -66,8 +66,9 @@ void main()
 			check = 0;
 		}
 	}
-	else
+	else//if the list is empty
 	{
+		 printf("The list is empty \n");
 		check =0;
 	}
 	}	

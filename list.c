@@ -33,7 +33,6 @@ struct node *find(int bon)
                 point = first->tail;  
                 return first;       
         }
-   
         while (first->tail->head != bon && first->tail->tail != NULL)  
         {  
                 first = first->tail;             
@@ -42,7 +41,6 @@ struct node *find(int bon)
         {      
                 return NULL;            
         }
-
         else
         {
                 return first->tail;     
@@ -50,8 +48,6 @@ struct node *find(int bon)
 }
 void prettyPrint()//printing the list
 { 
-    
-
     if(first!=NULL)
     {
         while (first->tail != NULL)
@@ -59,17 +55,15 @@ void prettyPrint()//printing the list
                 printf("%d, ", first->head);
                 first = first->tail;
         }
-        printf("%d", first->head); 
+        printf("%d\n", first->head); 
         first = point; 
-        printf("\n");
     }
     else
     {
-        printf("The list is empty lol\n");
-        
+        printf("The list is empty lol\n");//list is empty
+
     }
 }
-
 int delete(int bon)
 {
         struct node *dest;    
@@ -84,7 +78,7 @@ int delete(int bon)
                 dest = find(bon); //if bon is in the list delete
                 first->tail = dest->tail; 
                 first = point; 
-        printf("found and delete\n");
+        printf("found and deleted\n");
                 return 1;
         }
 }
