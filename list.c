@@ -4,9 +4,6 @@
 #include <stdlib.h>
 #include "list.h"
 
-//http://www.cprogramming.com/tutorial/c/lesson15.html
-//http://www.learn-c.org/en/Linked_lists
-
 void add(int bon)
 {
     struct node *newNode, *current;
